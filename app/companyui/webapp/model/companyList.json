@@ -1,0 +1,10 @@
+{
+    "CompanyLists" : [
+        {
+            "Name":"Employees"
+        },
+        {
+            "Name":"Departments"
+        }
+    ]
+}

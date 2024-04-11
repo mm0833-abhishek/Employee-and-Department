@@ -1,0 +1,92 @@
+<!-- <mvc:View
+	controllerName="companyui.controller.EmployeeDetails"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="Employee Details">
+		<ObjectHeader
+			intro="Emp Name"
+			title="ProductName"/>
+	</Page>
+</mvc:View> -->
+
+
+<!-- 
+<mvc:View controllerName="companyui.controller.EmployeesDetails"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page title="Employee Details" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox>
+                <ObjectHeader title="{selectedEmployee>/Employee_Full_Name}" />
+                <ObjectAttribute title="Employee ID:" text="{selectedEmployee>/Employee_Id}" />
+                <ObjectAttribute title="First Name:" text="{selectedEmployee>/Employee_First_Name}" />
+                <ObjectAttribute title="Last Name:" text="{selectedEmployee>/Employee_Last_Name}" />
+                <ObjectAttribute title="Phone Number:" text="{selectedEmployee>/Employee_Phone_Number}" />
+                <ObjectAttribute title="Department ID:" text="{selectedEmployee>/Employee_Department_ID}" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View> -->
+
+
+<mvc:View
+    controllerName="companyui.controller.EmployeesDetails"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+>
+    <Page
+        title="Employee Details"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <headerContent>
+            <Button
+                text="Edit"
+                press="onEdit"
+            />
+        </headerContent>
+
+
+
+        <f:Card
+            class="sapUiMediumMargin"
+            width="60%"
+            height="auto"
+        >
+            <f:header>
+                <card:Header
+                    title="{employeeModel>/Employee_Full_Name}"
+                    subtitle="{employeeModel>/Employee_Department_ID}"
+                    iconSrc="sap-icon://employee"
+                />
+            </f:header>
+            <f:content>
+                <VBox>
+                    <ObjectAttribute
+                        title="First Name"
+                        text="{employeeModel>/Employee_First_Name}"
+                        class="sapUiSmallMargin"
+                    />
+                    <ObjectAttribute
+                        title="Last Name"
+                        text="{employeeModel>/Employee_Last_Name}"
+                        class="sapUiSmallMargin"
+                    />
+                    <ObjectAttribute
+                        title="Phone Number"
+                        text="{employeeModel>/Employee_Phone_Number}"
+                        class="sapUiSmallMargin"
+                    />
+                    <!-- <HBox justifyContent="Center">
+                        <Button text="Approve" type="Accept" press="onApprove" class="sapUiSmallMarginEnd"/>
+                        <Button text="Reject" type="Reject" press="onReject" class="sapUiSmallMarginEnd"/>
+                        <Button text="Review" type="Default" press="onReview" class="sapUiSmallMarginEnd"/>
+                    </HBox> -->
+                </VBox>
+            </f:content>
+        </f:Card>
+    </Page>
+</mvc:View>

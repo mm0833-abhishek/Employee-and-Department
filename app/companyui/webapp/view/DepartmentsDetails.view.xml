@@ -1,0 +1,92 @@
+<!-- <mvc:View
+    controllerName="project1.controller.DepartmentDetails"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+>
+    <Page title="Department Details">
+        <content>
+         
+            <VBox class="sapUiSmallMargin">
+                <ObjectHeader
+                    title="Departent Name {oDataModel>Department_Name}"
+                    intro="Department ID {oDataModel>Department_Id}"
+                />
+                <ObjectAttribute text="HOD : {oDataModel>Head_Of_Department}" />
+            </VBox>
+
+            
+            <List
+                headerText="Employees"
+                items="{oDataModel>Employee}"
+            >
+                <StandardListItem
+                    title="ID:- {oDataModel>Employee_Id}"
+                    description="Name:- {oDataModel>Employee_Full_Name}"
+                />
+            </List>
+        </content>
+
+      
+        <headerContent>
+            <Button
+                icon="sap-icon://nav-back"
+                press="onNavBack"
+            />
+        </headerContent>
+    </Page>
+</mvc:View> -->
+
+
+<mvc:View
+    controllerName="companyui.controller.DepartmentsDetails"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+>
+    <Page title="Department Details">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <ObjectHeader
+                    title="Departent Name {oDaModel>Department_Name}"
+                    intro="Department ID {oDaModel>Department_Id}"
+                />
+                <ObjectAttribute text="HOD : {oDaModel>Head_Of_Department}" />
+            </VBox>
+
+            <Table
+                id="employeesTable"
+                headerText="Employees"
+                items="{oDaModel>Employee}"
+                mode="SingleSelectMaster"
+                selectionChange="onEmployeeSelectionChange"
+            >
+                <columns>
+                    <Column>
+                        <Text text="Employee ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Full Name" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{oDaModel>Employee_Id}" />
+                            <Text text="{oDaModel>Employee_Full_Name}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+
+        <!-- <headerContent>
+            <Button
+                icon="sap-icon://nav-back"
+                press="onNavBack"
+            />
+        </headerContent> -->
+    </Page>
+</mvc:View>
